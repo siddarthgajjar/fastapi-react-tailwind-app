@@ -42,7 +42,7 @@ class DriverLicenseApplicationCreate(SQLModel):
     po_box: Optional[str] = Field(None, max_length=10)
     city: str = Field(min_length=1, max_length=100)
     province: str = Field(min_length=1, max_length=50)
-    postal_code: str = Field(regex=r"^[A-Za-z]\d[A-Za-z] \d[A-Za-z]\d$")  # Canadian postal code format
+    postal_code: str = Field()  # Canadian postal code format
     status: str
 
 class DriverLicenseApplicationRead(SQLModel):
@@ -52,8 +52,8 @@ class DriverLicenseApplicationRead(SQLModel):
     first_name: str = Field(min_length=1, max_length=50)
     middle_name: Optional[str] = Field(None, max_length=50)
     driver_license_number: Optional[str] = Field(None, max_length=15)
-    birth_date: str = Field(regex=r"^\d{2}/\d{2}/\d{4}$")  # Format: dd/mm/yyyy
-    sex: str = Field(regex=r"^[MFX]$")  # M (Male), F (Female), X (Non-binary)
+    birth_date: str = Field()  # Format: dd/mm/yyyy
+    sex: str = Field()  # M (Male), F (Female), X (Non-binary)
     height: float  # Height in centimeters
 
     # Address fields
@@ -63,7 +63,7 @@ class DriverLicenseApplicationRead(SQLModel):
     po_box: Optional[str] = Field(None, max_length=10)
     city: str = Field(min_length=1, max_length=100)
     province: str = Field(min_length=1, max_length=50)
-    postal_code: str = Field(regex=r"^[A-Za-z]\d[A-Za-z] \d[A-Za-z]\d$")  # Canadian postal code format
+    postal_code: str = Field()  # Canadian postal code format
     status: str
 
 class DriverLicenseApplicationUpdate(DriverLicenseApplicationCreate):

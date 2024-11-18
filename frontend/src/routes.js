@@ -24,7 +24,8 @@ const AppRoutes = () => {
     <Routes>
       {/* If user is authenticated, redirect them from / to /dashboard */}
       <Route path="/" element={isAuthenticated ? <Navigate to="/dashboard" /> : <LoginPage />} />
-      
+      <Route path="/register" element={<RegisterPage />} />
+
       {/* Protect the Dashboard route */}
       <Route
         path="/dashboard"

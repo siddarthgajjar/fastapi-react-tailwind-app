@@ -7,6 +7,7 @@ This project is a CRUD (Create, Read, Update, Delete) application built using Fa
 - [Installation](#installation)
 - [Backend Setup](#backend-setup)
 - [Frontend Setup](#frontend-setup)
+- [Docker Setup](#docker-setup)
 - [Usage](#usage)
 - [Folder Structure](#folder-structure)
 - [Contributing](#contributing)
@@ -18,8 +19,8 @@ This project is a CRUD (Create, Read, Update, Delete) application built using Fa
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/yourproject.git
-    cd yourproject/backend
+    git clone https://github.com/siddarthgajjar/fastapi-react-tailwind-app.git
+    cd fastapi-react-tailwind-app/backend
     ```
 
 2. Create a virtual environment and activate it:
@@ -55,6 +56,21 @@ This project is a CRUD (Create, Read, Update, Delete) application built using Fa
     npm start
     ```
 
+### Docker Setup
+
+To run the application using Docker, follow these steps:
+
+1. Make sure Docker is installed and running on your machine.
+
+2. Navigate to the root of your project directory.
+
+3. Build and start the containers using Docker Compose:
+    ```bash
+    docker-compose up --build
+    ```
+
+This will build the Docker images for both the backend and frontend, and start the containers. You can access your application at `http://localhost:3000`.
+
 ## Usage
 
 Once both the backend and frontend servers are running, you can access the application in your web browser at `http://localhost:3000`.
@@ -72,23 +88,19 @@ Once both the backend and frontend servers are running, you can access the appli
 │   ├── main.py
 │   ├── migrations
 │   │   ├── README
-│   │   ├── __pycache__
 │   │   ├── env.py
 │   │   ├── script.py.mako
 │   │   └── versions
 │   │       ├── 4996a6b8f2b2_remove_phonefield.py
 │   │       ├── 54c04ebc2d43_added_phonefield.py
 │   │       ├── 87dd9f08e15d_remove_is_admin_field.py
-│   │       └── __pycache__
 │   ├── models
 │   │   ├── __init__.py
-│   │   ├── __pycache__
 │   │   ├── driver_license_application.py
 │   │   └── user.py
 │   ├── requirements.txt
 │   ├── routers
 │   │   ├── __init__.py
-│   │   ├── __pycache__
 │   │   ├── auth_routes.py
 │   │   ├── driver_license.py
 │   │   └── user.py

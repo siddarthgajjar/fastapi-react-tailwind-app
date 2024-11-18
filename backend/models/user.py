@@ -9,6 +9,7 @@ class User(SQLModel, table=True):
     email: EmailStr = Field(unique=True, index=True, max_length=255)
 
 class UserCreate(SQLModel):
+    username: str
     email: EmailStr
     password: str =  Field(min_length=8, max_length=128)
 

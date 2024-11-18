@@ -10,6 +10,7 @@ from database import get_session
 from auth import verify_token
 from typing import List
 from models.user import User
+from pydantic import ValidationError
 
 router = APIRouter()
 

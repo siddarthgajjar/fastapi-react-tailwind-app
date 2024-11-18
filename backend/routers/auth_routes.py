@@ -22,7 +22,7 @@ def register_user(user: UserCreate, session: Session = Depends(get_session)):
     try:
         hashed_password = pwd_context.hash(user.password)
         new_user = User(
-            username=user.email.split("@")[0],  # Default username from email
+            username=user.username,  # Default username from email
             password=hashed_password,
             email=user.email
         )
